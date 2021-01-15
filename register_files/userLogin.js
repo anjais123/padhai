@@ -1,6 +1,6 @@
 function signUpNewUser(){
-    var uname = document.getElementById("userName");
-    var pwd = document.getElementById("password");
+    var uname = document.getElementById("userName").value;
+    var pwd = document.getElementById("password").value;
 
     firebase.auth().createUserWithEmailAndPassword(uname, pwd)
   .then((user) => {
@@ -14,8 +14,8 @@ function signUpNewUser(){
 }
 
 function signInWithEmailPassword() {
-    var email = document.getElementById("userName");
-    var password = document.getElementById("password");
+    var email = document.getElementById("loginId").value;
+    var password = document.getElementById("loginPwd").value;
     // [START auth_signin_password]
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then((user) => {
