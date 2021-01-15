@@ -88,19 +88,19 @@ includeHTML();
 <div class="account-inner">
 
 <div class="inner-heading">
-<h3>Sign In</h3>
+<h3>Existing User Sign In</h3>
 </div>
 <form>
 <div class="form-group">
 <label>Username/Email Address:</label>
-<input type="text" class="form-control" name="email">
+<input type="text" class="form-control" name="email" id="loginId">
 </div>
 <div class="form-group">
 <label>Password:</label>
-<input type="Password" class="form-control" name="password">
+<input type="Password" class="form-control" name="password" id="loginPwd">
 </div>
 <div class="form-group">
-<button class="mt_btn_yellow">Login</button>
+<button class="mt_btn_yellow" onclick="signInWithEmailPassword()">Login</button>
 <input class="checkbox" type="checkbox"> <span>Remember me</span>
 </div>
 <p class="lost_password">
@@ -113,26 +113,26 @@ includeHTML();
 <div class="account-inner">
 
 <div class="inner-heading">
-<h3>Register</h3>
+<h3>Register for new User</h3>
 </div>
 <form>
 <div class="form-group">
-<label>Full Name:</label>
-<input type="text" class="form-control" name="name">
+<label>* Full Name:</label>
+<input type="text" class="form-control" name="name" id="name">
 </div>
 <div class="form-group">
-<label>Address:</label>
-<input type="text" class="form-control" name="address">
+<label>* Address:</label>
+<input type="text" class="form-control" name="address" id="address">
 </div>
 <div class="form-group">
-<label>Phone No.:</label>
-<input type="text" class="form-control" name="phone">
+<label>* Phone No.:</label>
+<input type="text" class="form-control" name="phone" id="phone">
 </div>
 <div class="form-group">
-<label>Country:</label>
- <input type="text" class="form-control" name="country">
+<label>* EmailId:</label>
+ <input type="text" class="form-control" name="country" id="emailId">
 </div>
-<div class="form-group">
+<!--div class="form-group">
 <label>Categories:</label>
 <select>
 <option>Civil</option>
@@ -140,16 +140,16 @@ includeHTML();
 <option>Labour</option>
 <option>Masson</option>
 </select>
+</div-->
+<div class="form-group">
+<label>* Username/Email Address:</label>
+<input type="text" class="form-control" name="user" id="userName">
 </div>
 <div class="form-group">
-<label>Username:</label>
-<input type="text" class="form-control" name="user">
+<label>* Password:</label>
+<input type="Password" class="form-control" name="password" id="password">
 </div>
-<div class="form-group">
-<label>Password:</label>
-<input type="Password" class="form-control" name="password">
-</div>
-<button class="mt_btn_yellow">Register</button>
+<button class="mt_btn_yellow" onclick="signUpNewUser()">Register</button>
 </form>
 </div>
 </div>
@@ -174,5 +174,6 @@ includeHTML();
 <script src="./register_files/jquery.easing.min.js.download" type="text/javascript"></script>
 <script src="./register_files/jquery.appear.js.download" type="text/javascript"></script>
 <script src="./register_files/main.js.download" type="text/javascript"></script>
+<script src="./register_files/userLogin.js" type="text/javascript"></script>
 
 </body></html>
