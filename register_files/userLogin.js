@@ -42,13 +42,13 @@ function signInWithEmailPassword() {
     subjects += "english, ";
     if(document.getElementById("math").checked)
     subjects += "math, ";
-    if(document.getElementById("social").checked)
+    if(document.getElementById("social")!=null && document.getElementById("social").checked)
     subjects += "social, ";
-    if(document.getElementById("science").checked)
+    if(document.getElementById("science")!=null && document.getElementById("science").checked)
     subjects += "science, ";
-    if(document.getElementById("physics").checked)
+    if(document.getElementById("physics")!=null && document.getElementById("physics").checked)
     subjects += "physics, ";
-    if(document.getElementById("chemistry").checked)
+    if(document.getElementById("chemistry")!=null && document.getElementById("chemistry").checked)
     subjects += "chemistry, ";
 
     if(email=="" || phone =="" || classNum=="" || subjects=="")
