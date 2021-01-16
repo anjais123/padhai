@@ -39,25 +39,27 @@ function signInWithEmailPassword() {
     var subjects = "";
 
     if(document.getElementById("english").checked)
-    subjects += "english, ";
+    subjects += "english,";
     if(document.getElementById("math").checked)
-    subjects += "math, ";
+    subjects += "math,";
     if(document.getElementById("social")!=null && document.getElementById("social").checked)
-    subjects += "social, ";
+    subjects += "social,";
     if(document.getElementById("science")!=null && document.getElementById("science").checked)
-    subjects += "science, ";
+    subjects += "science,";
     if(document.getElementById("physics")!=null && document.getElementById("physics").checked)
-    subjects += "physics, ";
+    subjects += "physics,";
     if(document.getElementById("chemistry")!=null && document.getElementById("chemistry").checked)
-    subjects += "chemistry, ";
+    subjects += "chemistry,";
 
     if(email=="" || phone =="" || classNum=="" || subjects=="")
     {
       window.alert("Please enter all the required fields and select atleast one subject");
       return;
   }
-
-    firebase.database().ref('coursesApply/' + email+classNum).set({
+  var id = email+classNum;
+  var idNew = id.split('.').join("");
+  subjects = subjects.split(',').join(" ");
+    firebase.database().ref('coursesApply/' + idNew).set({
       email: email,
       phone: phone,
       classNumber : classNum,
