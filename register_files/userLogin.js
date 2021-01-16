@@ -30,14 +30,37 @@ function signInWithEmailPassword() {
       });
 
   }
+  // Get a reference to the database service
+  var database = firebase.database();
+  function applyNow(){
+    var email = document.getElementById("inputEmailId").value;
+    var phone = document.getElementById("inputPhone").value;
+    var classNum = document.getElementById("classNo").value;
+    var subjects = "";
 
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      document.getElementById('labelName').innerHTML = "Welcome " + user.uid;
-      window.alert("User is signed in");
-  
-    } else {
-      window.alert("User is not signed in");
-  
-    }
-  });
+    if(document.getElementById("english").checked)
+    subjects += "english, ";
+    if(document.getElementById("math").checked)
+    subjects += "math, ";
+    if(document.getElementById("social").checked)
+    subjects += "social, ";
+    if(document.getElementById("science").checked)
+    subjects += "science, ";
+    if(document.getElementById("physics").checked)
+    subjects += "physics, ";
+    if(document.getElementById("chemistry").checked)
+    subjects += "chemistry, ";
+
+    if(email=="" || phone =="" || classNum=="" || subjects=="")
+    {
+      window.alert("Please enter all the required fields and select atleast one subject");
+      return;
+  }
+
+    firebase.database().ref('coursesApply/' + email+classNum).set({
+      email: email,
+      phone: phone,
+      classNumber : classNum,
+      subjects: subjects
+    });
+  }
