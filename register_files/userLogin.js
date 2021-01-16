@@ -65,4 +65,5 @@ function signInWithEmailPassword() {
       classNumber : classNum,
       subjects: subjects
     });
+    window.alert("Greetings from Studots. Your selection is submitted successfully. Our team will contact you soon!");
   }
