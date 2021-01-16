@@ -7,7 +7,7 @@ function signUpNewUser(){
 
     firebase.auth().createUserWithEmailAndPassword(uname, pwd).then((user) => {
     var ran = "New User Registered";
-    alert(ran);
+    window.alert(ran);
   }).catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -28,7 +28,18 @@ function signInWithEmailPassword() {
       }).catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
-        alert("Either emailId/password is not correct");
+        window.alert("Either emailId/password is not correct");
       });
 
   }
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      document.getElementById('labelName').innerHTML = "Welcome " + user.uid;
+      window.alert("User is signed in");
+  
+    } else {
+      window.alert("User is not signed in");
+  
+    }
+  });
