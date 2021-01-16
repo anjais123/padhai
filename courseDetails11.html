@@ -100,5 +100,20 @@ includeHTML();
 <script src="./courseDetails_files/jquery.appear.js.download" type="text/javascript"></script>
 <script src="./courseDetails_files/isotope.min.js.download" type="text/javascript"></script>
 <script src="./courseDetails_files/main.js.download" type="text/javascript"></script>
-
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+<script>
+  // Set the configuration for your app
+  // TODO: Replace with your project's config object
+  var config = {
+    apiKey: "AIzaSyCVzszvChNO8terku9033S7TzOumjKoUQ0",
+    authDomain: "thestudots.firebaseapp.com",
+    databaseURL: "https://thestudots-default-rtdb.firebaseio.com",
+    storageBucket: "thestudots.appspot.com"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="./register_files/userLogin.js" type="text/javascript"></script>
 </body></html>
