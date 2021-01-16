@@ -1,5 +1,3 @@
-import firebase from "firebase/app";
-import "firebase/auth";
 
 function signUpNewUser(){
     var uname = document.getElementById("userName").value;
